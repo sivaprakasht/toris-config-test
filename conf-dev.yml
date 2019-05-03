@@ -1,0 +1,5 @@
+customers: "accounts"
+users: "persons"
+vehicles: "vehicles"
+devices: "sensors"
+source: "outer-dev"
