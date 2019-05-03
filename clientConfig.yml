@@ -1,7 +1,0 @@
-config:
-  cfc:
-    account:
-      name: "test"
-  oem:
-    account:
-      name: "oem"
