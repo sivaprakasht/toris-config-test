@@ -1,0 +1,231 @@
+{
+  "config": {
+    "cfc": {
+      "customers": {
+        "category": "accounts",
+        "sourceIdField": "customerId",
+        "sourceIdQueryField": "ud.cfc.customerId",
+        "postCreationEntityName": "features"
+      },
+      "features": {
+        "category": "features",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId",
+          "additionalConfig": {
+          }
+        }
+      },
+      "vehicles": {
+        "category": "vehicles",
+        "sourceIdField": "vehicleId",
+        "sourceIdQueryField": "ud.cfc.vehicleId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId",
+          "additionalConfig": {
+          }
+        }
+      },
+      "drivers": {
+        "category": "persons",
+        "type": "DRIVER",
+        "sourceIdField": "driverId",
+        "sourceIdQueryField": "ud.cfc.driverId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId",
+          "additionalConfig": {
+          }
+        },
+        "associationConfig": {
+          "category": "associations",
+          "pmryObjCat": "VEHICLES",
+          "scdyObjCat": "PERSONS",
+          "type": "ASSIGNED_TO",
+          "pmrySourceField": "vehicleId",
+          "pmrySourceQryField": "ud.cfc.vehicleId"
+        }
+      },
+      "devices": {
+        "category": "sensors",
+        "sourceIdField": "deviceId",
+        "sourceIdQueryField": "ud.cfc.deviceId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId",
+          "additionalConfig": {
+          }
+        },
+        "associationConfig": {
+          "category": "associations",
+          "pmryObjCat": "SENSORS",
+          "scdyObjCat": "VEHICLES",
+          "type": "INSTALLED_IN",
+          "scdySourceField": "vehicleId",
+          "scdySourceQryField": "ud.cfc.vehicleId"
+        }
+      },
+      "users": {
+        "category": "persons",
+        "type": "USER",
+        "sourceIdField": "userId",
+        "sourceIdQueryField": "ud.cfc.userId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId",
+          "additionalConfig": {
+          }
+        },
+        "postCreationEntityName": "loginCredentials"
+      },
+      "loginCredentials": {
+        "category": "loginCredentials",
+        "type": "ADMIN",
+        "sourceIdField": "userId",
+        "dependencyConfig": {
+          "category": "persons",
+          "sourceField": "userId",
+          "fieldName": "personTId",
+          "queryKey": "ud.cfc.personTId"
+        }
+      },
+      "groups": {
+        "category": "sets",
+        "type": "ORG",
+        "restrictAccess": "ON",
+        "sourceIdField": "groupId",
+        "sourceIdQueryField": "ud.cfc.groupId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId"
+        }
+      },
+      "groupVehicles": {
+        "category": "setAssociations",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId"
+        },
+        "setAssociationConfig": {
+          "category": "SETS",
+          "type": "ORG",
+          "setIdSourceField": "groupId",
+          "setIdSourceQueryField": "ud.cfc.groupId",
+          "associationConfigs": [
+            {
+              "objCat": "VEHICLES",
+              "objCatSourceField": "vehicleId",
+              "objCatSourceQueryField": "ud.cfc.vehicleId"
+            }
+          ]
+        }
+      },
+      "groupUsers": {
+        "category": "sets",
+        "description": "Security Set Auto Creation for PFM Set",
+        "type": "SECURITY",
+        "restrictAccess": "OFF",
+        "sourceIdField": "groupId",
+        "sourceIdQueryField": "ud.cfc.groupId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId"
+        },
+        "associationConfig": {
+          "category": "associations",
+          "pmryObjCat": "CREDENTIALS",
+          "scdyObjCat": "SETS",
+          "scdyObjType": "SECURITY",
+          "type": "BELONGS_TO",
+          "pmrySourceField": "userId",
+          "pmrySourceQryField": "ud.cfc.userId"
+        },
+        "postCreationEntityName": "setPermissions"
+      },
+      "roles": {
+        "category": "roles",
+        "description": "Auto Role Creation for PFM",
+        "sourceIdField": "groupId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId"
+        },
+        "associationConfig": {
+          "category": "associations",
+          "pmryObjCat": "ROLES",
+          "scdyObjCat": "SETS",
+          "scdyObjType": "SECURITY",
+          "type": "ASSIGNED_TO",
+          "scdySourceField": "groupId",
+          "scdySourceQryField": "ud.cfc.groupId"
+        },
+        "postCreationEntityName": "setPermissions"
+      },
+      "permissions": {
+        "category": "PERMISSIONS",
+        "dependencyConfig": {
+          "category": "features",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.cfc.customerId"
+        }
+      },
+      "setPermission": {
+        "category": "PERMISSIONS",
+        "dependencyConfig": {
+          "category": "sets",
+          "sourceField": "groupId",
+          "queryKey": "ud.cfc.groupId"
+        }
+      },
+      "setPermissions": {
+        "category": "permissions",
+        "dependencyConfig": {
+          "category": "accounts",
+          "fieldName": "accountTId",
+          "sourceField": "customerId",
+          "queryKey": "ud.cfc.customerId"
+        }
+      }
+    },
+    "oem": {
+      "customers": {
+        "category": "accounts",
+        "sourceIdField": "customerId",
+        "postCreationEntityName": "features"
+      },
+      "vehicles": {
+        "category": "vehicles",
+        "sourceIdField": "vehicleId",
+        "sourceIdQueryField": "ud.oem.vehicleId",
+        "dependencyConfig": {
+          "category": "accounts",
+          "sourceField": "customerId",
+          "fieldName": "accountTId",
+          "queryKey": "ud.oem.customerId",
+          "additionalConfig": {
+          }
+        }
+      }
+    }
+  }
+}
