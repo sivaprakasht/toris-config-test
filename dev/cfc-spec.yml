@@ -1,24 +1,17 @@
-[
-  {"account": {
-    "operation": "shift",
-    "spec": {
-      "name": "name",
-      "kafkaKey": "kafkaKey",
-      "id": "ud.cfc.customerId",
-      "applicationCustomerId": "ud.cfc.applicationCustomerId",
-      "#customers": "ud.cfc.sourceCategory",
-      "#cfc": "ud.usedBy[]"
-    }
-  }},
-  {"device": {
-      "operation": "shift",
-      "spec": {
-        "name": "name",
-        "kafkaKey": "kafkaKey",
-        "id": "ud.cfc.customerId",
-        "applicationCustomerId": "ud.cfc.applicationCustomerId",
-        "#customers": "ud.cfc.sourceCategory",
-        "#cfc": "ud.usedBy[]"
-      }
-    }}
-]
+specification:
+  - account:
+      spec:
+          name: "name"
+          ud:
+            cfc:
+              customerId: "id"
+              sourceCategory: "customers"
+              applicationCustomerId: "applicationCustomerId"
+  - vehicle:
+      spec:
+          name: "name"
+          ud:
+            cfc:
+              customerId: "id"
+              sourceCategory: "vehicles"
+              applicationCustomerId: "applicationCustomerId"
