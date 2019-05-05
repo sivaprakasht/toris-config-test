@@ -1,5 +1,6 @@
 specification:
-  - name: "account"
+  -
+    name: "account"
     spec:
       name: "name"
       ud:
@@ -7,7 +8,8 @@ specification:
           customerId: "id"
           sourceCategory: "customers"
           applicationCustomerId: "applicationCustomerId"
-  - name: "vehicle"
+  -
+    name: "vehicle"
     spec:
       name: "name"
       ud:
