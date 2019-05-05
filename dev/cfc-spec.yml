@@ -2,16 +2,16 @@ specification:
   - name: "account"
     spec:
       name: "name"
-        ud:
-          cfc:
-            customerId: "id"
-            sourceCategory: "customers"
-            applicationCustomerId: "applicationCustomerId"
+      ud:
+        cfc:
+          customerId: "id"
+          sourceCategory: "customers"
+          applicationCustomerId: "applicationCustomerId"
   - name: "vehicle"
     spec:
       name: "name"
-        ud:
-          cfc:
-            customerId: "id"
-            sourceCategory: "vehicle"
-            applicationCustomerId: "applicationCustomerId"
+      ud:
+        cfc:
+          customerId: "id"
+          sourceCategory: "vehicle"
+          applicationCustomerId: "applicationCustomerId"
