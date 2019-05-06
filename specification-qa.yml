@@ -1,0 +1,14 @@
+application:
+  configs:
+    - name: "vi"
+      specifications:
+        -
+          name: "account"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              applicationCustomerId: "ud.cfc.applicationCustomerId"
+              id: "ud.cfc.customerId"
+              "#customers": "ud.cfc.sourceCategory"
+              "#cfc": "ud.usedBy[]"
