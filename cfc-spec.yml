@@ -1,6 +1,6 @@
 application:
   configs:
-    - cfc:
+    - "cfc":
         specifications:
           -
             name: "account"
