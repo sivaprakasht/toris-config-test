@@ -1,6 +1,8 @@
 {
-  "customers": "accounts",
-  "users": "persons",
-  "vehicles": "vehicles",
-  "devices": "sensors"
+  "mapping": {
+    "customers": "accounts",
+    "users": "persons",
+    "vehicles": "vehicles",
+    "devices": "sensors"
+  }
 }
