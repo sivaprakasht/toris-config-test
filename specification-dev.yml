@@ -1,23 +1,8 @@
 application:
   configs:
-    - name: "cfc"
-      specifications:
-        -
-          name: "account-tt"
-          joltSpec:
-            operation: "shift"
-            spec:
-              name: "name"
-              applicationCustomerId: "ud.cfc.applicationCustomerId"
-              id: "ud.cfc.customerId"
-              "#customers": "ud.cfc.sourceCategory"
-              "#cfc": "ud.usedBy[]"
-        -
-          name: "vehicles"
-          joltSpec:
-            operation: "shift"
-            spec:
-              name: "name"
-
-    - name: "oem"
-    - name: "vi"
+    cfc:
+      name: "cfc"
+    oem:
+      name: "oem"
+    vi:
+      name: "vi"
