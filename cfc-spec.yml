@@ -1,5 +1,15 @@
 application:
   configs:
     - name: "cfc"
+      specifications:
+        -
+          name: "account"
+          joltSpec:
+            name: "name"
+            applicationCustomerId: "ud.cfc.applicationCustomerId"
+            id: "ud.cfc.customerId"
+            "#customers": "ud.cfc.sourceCategory"
+            "#cfc": "ud.usedBy[]"
+
     - name: "oem"
     - name: "vi"
