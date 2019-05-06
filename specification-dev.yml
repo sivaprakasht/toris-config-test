@@ -1,8 +1,38 @@
-application:
-  configs:
-    cfc:
-      name: "cfc"
-    oem:
-      name: "oem"
-    vi:
-      name: "vi"
+{
+  "applications": {
+    "configs": {
+      "cfc": {
+        "accounts": [
+          {
+            "operation": "shift",
+            "spec": {
+              "name": "name",
+              "kafkaKey": "kafkaKey",
+              "id": "ud.cfc.customerId",
+              "applicationCustomerId": "ud.cfc.applicationCustomerId",
+              "#customers": "ud.cfc.sourceCategory",
+              "#cfc": "ud.usedBy[]"
+            }
+          }
+        ],
+        "vehicles": [
+          {
+            "operation": "shift",
+            "spec": {
+              "name": "name",
+              "description": "descr",
+              "vin": "sn",
+              "kafkaKey": "kafkaKey",
+              "customerId": "ud.cfc.customerId",
+              "id": "ud.cfc.vehicleId",
+              "#vehicles": "ud.cfc.sourceCategory",
+              "unitNumber": "ud.cfc.unitNumber",
+              "deviceIds": "ud.cfc.deviceIds",
+              "#cfc": "ud.usedBy[]"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
