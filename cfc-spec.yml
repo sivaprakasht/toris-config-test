@@ -5,11 +5,27 @@ application:
         -
           name: "account"
           joltSpec:
-            name: "name"
-            applicationCustomerId: "ud.cfc.applicationCustomerId"
-            id: "ud.cfc.customerId"
-            "#customers": "ud.cfc.sourceCategory"
-            "#cfc": "ud.usedBy[]"
+            operation: "shift"
+            spec:
+              name: "name"
+              applicationCustomerId: "ud.cfc.applicationCustomerId"
+              id: "ud.cfc.customerId"
+              "#customers": "ud.cfc.sourceCategory"
+              "#cfc": "ud.usedBy[]"
+        -
+          name: "vehicles"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              description: "descr"
+              vin: "sn"
+              customerId: "ud.cfc.customerId"
+              id: "ud.cfc.vehicleId"
+              "#vehicles": "ud.cfc.sourceCategory"
+              "unitNumber": "ud.cfc.unitNumber"
+              "deviceIds": "ud.cfc.deviceIds"
+              "#cfc": "ud.usedBy[]"
 
     - name: "oem"
     - name: "vi"
