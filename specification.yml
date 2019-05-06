@@ -1,0 +1,63 @@
+spring:
+  profiles: cfc
+application:
+  configs:
+    - name: "cfc"
+      specifications:
+        -
+          name: "account"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              applicationCustomerId: "ud.cfc.applicationCustomerId"
+              id: "ud.cfc.customerId"
+              "#customers": "ud.cfc.sourceCategory"
+              "#cfc": "ud.usedBy[]"
+        -
+          name: "vehicles"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              description: "descr"
+              vin: "sn"
+              customerId: "ud.cfc.customerId"
+              id: "ud.cfc.vehicleId"
+              "#vehicles": "ud.cfc.sourceCategory"
+              "unitNumber": "ud.cfc.unitNumber"
+              "deviceIds": "ud.cfc.deviceIds"
+              "#cfc": "ud.usedBy[]"
+
+---
+
+spring:
+  profiles: oem
+application:
+  configs:
+    - name: "oem"
+      specifications:
+        -
+          name: "account"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              applicationCustomerId: "ud.cfc.applicationCustomerId"
+              id: "ud.cfc.customerId"
+              "#customers": "ud.cfc.sourceCategory"
+              "#cfc": "ud.usedBy[]"
+        -
+          name: "vehicles"
+          joltSpec:
+            operation: "shift"
+            spec:
+              name: "name"
+              description: "descr"
+              vin: "sn"
+              customerId: "ud.cfc.customerId"
+              id: "ud.cfc.vehicleId"
+              "#vehicles": "ud.cfc.sourceCategory"
+              "unitNumber": "ud.cfc.unitNumber"
+              "deviceIds": "ud.cfc.deviceIds"
+              "#cfc": "ud.usedBy[]"
