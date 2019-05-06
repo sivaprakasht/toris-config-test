@@ -1,0 +1,6 @@
+{
+  "customers": "accounts",
+  "users": "persons",
+  "vehicles": "vehicles",
+  "devices": "sensors"
+}
