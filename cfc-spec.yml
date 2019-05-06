@@ -1,14 +1,16 @@
 app:
   name: "cfc"
   specifications:
-    - name: "account"
+    -
+      name: "account"
       spec:
         name: "name"
         applicationCustomerId: "ud.cfc.applicationCustomerId"
         id: "ud.cfc.customerId"
         "#customers": "ud.cfc.sourceCategory"
         "#cfc": "ud.usedBy[]"
-    -name: "vehicle"
+    -
+      name: "vehicle"
       spec:
         name: "name"
         applicationCustomerId: "ud.cfc.applicationCustomerId"
