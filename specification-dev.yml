@@ -3,7 +3,7 @@ application:
     - name: "cfc"
       specifications:
         -
-          name: "account"
+          name: "account-tt"
           joltSpec:
             operation: "shift"
             spec:
