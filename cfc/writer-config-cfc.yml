@@ -9,8 +9,8 @@
             "kafkaKey": "kafkaKey",
             "id": "ud.cfc.customerId",
             "applicationCustomerId": "ud.cfc.applicationCustomerId",
-            "#customers": "ud.cfc.sourceCategory",
-            "#cfc": "ud.usedBy[]"
+            "\#customers": "ud.cfc.sourceCategory",
+            "\#cfc": "ud.usedBy[]"
           }
         }
       ],
