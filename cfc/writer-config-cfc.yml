@@ -1,6 +1,6 @@
 {
   "writer-config": {
-    "specifications": {
+    "specification": {
       "accounts": [
         {
           "operation": "shift",
