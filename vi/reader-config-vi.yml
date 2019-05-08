@@ -1,0 +1,118 @@
+{
+  "reader-config": {
+    "specifications": {
+      "accounts": [
+        {
+          "operation": "shift",
+          "spec": {
+            "operation": "operation",
+            "name": "customerName",
+            "descr": "description",
+            "tId": "torId",
+            "lifeState": "lifeState",
+            "ud": {
+              "usedBy": "usedBy",
+              "*": {
+                "customerId": "customerId",
+                "sourceCategory": "objectCategory"
+              }
+            },
+            "crtdDt": "createdTimeStamp",
+            "uptdDt": "updatedTimeStamp",
+            "decoration": "decoration"
+          }
+        }
+      ],
+      "persons": [
+        {
+          "operation": "shift",
+          "spec": {
+            "operation": "operation",
+            "name": "userName",
+            "descr": "description",
+            "tId": "torId",
+            "accountTId": "torAccountId",
+            "uId": {
+              "emailAdrs": "userEmail"
+            },
+            "lifeState": "lifeState",
+            "ud": {
+              "usedBy": "usedBy",
+              "*": {
+                "customerId": "customerId",
+                "sourceCategory": "objectCategory",
+                "userId": "userId"
+              }
+            },
+            "crtdDt": "createdTimeStamp",
+            "uptdDt": "updatedTimeStamp",
+            "decoration": "decoration"
+          }
+        }
+      ],
+      "sensors": [
+        {
+          "operation": "shift",
+          "spec": {
+            "operation": "operation",
+            "name": "name",
+            "descr": "description",
+            "tId": "torId",
+            "accountTId": "torAccountId",
+            "sn": "deviceSerialNumber",
+            "mdl": "modelCode",
+            "mnf": "manufacturer",
+            "type": "typeCode",
+            "lifeState": "lifeState",
+            "ud": {
+              "usedBy": "usedBy",
+              "*": {
+                "customerId": "customerId",
+                "sourceCategory": "objectCategory",
+                "vehicleId": "vehicleId",
+                "deviceId": "deviceId"
+              }
+            },
+            "crtdDt": "createdTimeStamp",
+            "uptdDt": "updatedTimeStamp",
+            "decoration": "decoration"
+          }
+        }
+      ],
+      "vehicles": [
+        {
+          "operation": "shift",
+          "spec": {
+            "operation": "operation",
+            "name": "name",
+            "descr": "description",
+            "tId": "torId",
+            "accountTId": "torAccountId",
+            "sn": "vin",
+            "mdl": "modelCode",
+            "mnf": "manufacturer",
+            "lifeState": "lifeState",
+            "ud": {
+              "usedBy": "usedBy",
+              "*": {
+                "customerId": "customerId",
+                "sourceCategory": "objectCategory",
+                "vehicleId": "vehicleId",
+                "dsn": "deviceSerialNumber",
+                "unitNumber": "unitNumber",
+                "deviceIds": "deviceIds",
+                "deviceSerialNumber": "deviceSerialNumber"
+              }
+            },
+            "crtdDt": "createdTimeStamp",
+            "uptdDt": "updatedTimeStamp",
+            "decoration": "decoration"
+          }
+        }
+      ]
+    },
+    "mapping": {
+
+    }
+  }
+}
