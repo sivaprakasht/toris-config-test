@@ -1,89 +1,91 @@
 {
-  "specifications": {
-    "accounts": [
-      {
-        "operation": "shift",
-        "spec": {
-          "name": "name",
-          "kafkaKey": "kafkaKey",
-          "id": "ud.cfc.customerId",
-          "applicationCustomerId": "ud.cfc.applicationCustomerId",
-          "#customers": "ud.cfc.sourceCategory",
-          "#cfc": "ud.usedBy[]"
+  "writer-config": {
+    "specifications": {
+      "accounts": [
+        {
+          "operation": "shift",
+          "spec": {
+            "name": "name",
+            "kafkaKey": "kafkaKey",
+            "id": "ud.cfc.customerId",
+            "applicationCustomerId": "ud.cfc.applicationCustomerId",
+            "#customers": "ud.cfc.sourceCategory",
+            "#cfc": "ud.usedBy[]"
+          }
         }
-      }
-    ],
-    "vehicles": [
-      {
-        "operation": "shift",
-        "spec": {
-          "name": "name",
-          "description": "descr",
-          "vin": "sn",
-          "kafkaKey": "kafkaKey",
-          "customerId": "ud.cfc.customerId",
-          "id": "ud.cfc.vehicleId",
-          "#vehicles": "ud.cfc.sourceCategory",
-          "unitNumber": "ud.cfc.unitNumber",
-          "deviceIds": "ud.cfc.deviceIds",
-          "#cfc": "ud.usedBy[]"
+      ],
+      "vehicles": [
+        {
+          "operation": "shift",
+          "spec": {
+            "name": "name",
+            "description": "descr",
+            "vin": "sn",
+            "kafkaKey": "kafkaKey",
+            "customerId": "ud.cfc.customerId",
+            "id": "ud.cfc.vehicleId",
+            "#vehicles": "ud.cfc.sourceCategory",
+            "unitNumber": "ud.cfc.unitNumber",
+            "deviceIds": "ud.cfc.deviceIds",
+            "#cfc": "ud.usedBy[]"
+          }
         }
-      }
-    ],
-    "sensors": [
-      {
-        "operation": "shift",
-        "spec": {
-          "serialNumber": "sn",
-          "description": "descr",
-          "modelCode": "mdl",
-          "modelTypeCode": "type",
-          "kafkaKey": "kafkaKey",
-          "customerId": "ud.cfc.customerId",
-          "id": "ud.cfc.deviceId",
-          "#devices": "ud.cfc.sourceCategory",
-          "vehicleId": "ud.cfc.vehicleId",
-          "#cfc": "ud.usedBy[]"
+      ],
+      "sensors": [
+        {
+          "operation": "shift",
+          "spec": {
+            "serialNumber": "sn",
+            "description": "descr",
+            "modelCode": "mdl",
+            "modelTypeCode": "type",
+            "kafkaKey": "kafkaKey",
+            "customerId": "ud.cfc.customerId",
+            "id": "ud.cfc.deviceId",
+            "#devices": "ud.cfc.sourceCategory",
+            "vehicleId": "ud.cfc.vehicleId",
+            "#cfc": "ud.usedBy[]"
+          }
         }
-      }
-    ],
-    "persons": [
-      {
-        "operation": "shift",
-        "spec": {
-          "firstName": "givenNames",
-          "lastName": "surname",
-          "displayName": "name",
-          "kafkaKey": "kafkaKey",
-          "customerId": "ud.cfc.customerId",
-          "id": "ud.cfc.userId",
-          "#users": "ud.cfc.sourceCategory",
-          "#cfc": "ud.usedBy[]",
-          "electronicAddresses": {
-            "*": {
-              "type": {
-                "EMAIL_ADDRESS": {
-                  "@(2,text)": "uId.emailAdrs"
+      ],
+      "persons": [
+        {
+          "operation": "shift",
+          "spec": {
+            "firstName": "givenNames",
+            "lastName": "surname",
+            "displayName": "name",
+            "kafkaKey": "kafkaKey",
+            "customerId": "ud.cfc.customerId",
+            "id": "ud.cfc.userId",
+            "#users": "ud.cfc.sourceCategory",
+            "#cfc": "ud.usedBy[]",
+            "electronicAddresses": {
+              "*": {
+                "type": {
+                  "EMAIL_ADDRESS": {
+                    "@(2,text)": "uId.emailAdrs"
+                  }
                 }
               }
             }
           }
-        }
-      },
-      {
-        "operation": "cardinality",
-        "spec": {
-          "uId": {
-            "emailAdrs": "ONE"
+        },
+        {
+          "operation": "cardinality",
+          "spec": {
+            "uId": {
+              "emailAdrs": "ONE"
+            }
           }
         }
-      }
-    ]
-  },
-  "mapping": {
-    "customers": "accounts",
-    "users": "persons",
-    "vehicles": "vehicles",
-    "devices": "sensors"
+      ]
+    },
+    "mapping": {
+      "customers": "accounts",
+      "users": "persons",
+      "vehicles": "vehicles",
+      "devices": "sensors"
+    }
   }
 }
