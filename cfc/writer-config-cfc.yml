@@ -5,9 +5,9 @@
         {
           "operation": "shift",
           "spec": {
-            "name": "name",
-            "kafkaKey": "kafkaKey",
-            "id": "ud.cfc.customerId",
+            "+name": "name",
+            "^kafkaKey": "kafkaKey",
+            "*id": "ud.cfc.customerId",
             "applicationCustomerId": "ud.cfc.applicationCustomerId",
             "#customers": "ud.cfc.sourceCategory",
             "#cfc": "ud.usedBy[]"
